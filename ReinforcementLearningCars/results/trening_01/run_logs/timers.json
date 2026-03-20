@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1773925767",
+        "python_version": "3.10.8 (tags/v3.10.8:aaaf517, Oct 11 2022, 16:50:30) [MSC v.1933 64 bit (AMD64)]",
+        "command_line_arguments": "E:\\Projects\\Unity\\reinforcement2\\ReinforcementLearningCars\\ReinforcementLearningCars\\venv\\venv\\Scripts\\mlagents-learn config/moveToGoal5TestSAC4.yaml --env=Build/MyEnv/MyEnv.exe --run-id=trening_01 --no-graphics --num-envs=4",
+        "mlagents_version": "1.1.0",
+        "mlagents_envs_version": "1.1.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.7.1+cu118",
+        "numpy_version": "1.23.5",
+        "end_time_seconds": "1773925770"
+    },
+    "total": 2.5279812999997375,
+    "count": 1,
+    "self": 0.09668190000047616,
+    "children": {
+        "run_training.setup": {
+            "total": 0.21609739999985322,
+            "count": 1,
+            "self": 0.21609739999985322
+        },
+        "TrainerController.start_learning": {
+            "total": 2.215201999999408,
+            "count": 1,
+            "self": 0.0002468999991833698,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.2149475000005623,
+                    "count": 1,
+                    "self": 2.2149475000005623
+                },
+                "trainer_threads": {
+                    "total": 6.999998731771484e-07,
+                    "count": 1,
+                    "self": 6.999998731771484e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 6.8999997893115506e-06,
+                    "count": 1,
+                    "self": 6.8999997893115506e-06
+                }
+            }
+        }
+    }
+}

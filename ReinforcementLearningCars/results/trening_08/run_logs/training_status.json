@@ -1,0 +1,65 @@
+{
+    "CarMoveToGoal2": {
+        "checkpoints": [
+            {
+                "steps": 2499505,
+                "file_path": "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-2499505.onnx",
+                "reward": null,
+                "creation_time": 1773944447.336283,
+                "auxillary_file_paths": [
+                    "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-2499505.pt"
+                ]
+            },
+            {
+                "steps": 2999975,
+                "file_path": "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-2999975.onnx",
+                "reward": -0.9200858473777771,
+                "creation_time": 1773946982.0045214,
+                "auxillary_file_paths": [
+                    "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-2999975.pt"
+                ]
+            },
+            {
+                "steps": 3499505,
+                "file_path": "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-3499505.onnx",
+                "reward": null,
+                "creation_time": 1773949543.5670488,
+                "auxillary_file_paths": [
+                    "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-3499505.pt"
+                ]
+            },
+            {
+                "steps": 3999589,
+                "file_path": "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-3999589.onnx",
+                "reward": null,
+                "creation_time": 1773952246.062154,
+                "auxillary_file_paths": [
+                    "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-3999589.pt"
+                ]
+            },
+            {
+                "steps": 4228759,
+                "file_path": "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-4228759.onnx",
+                "reward": null,
+                "creation_time": 1773953212.839242,
+                "auxillary_file_paths": [
+                    "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-4228759.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4228759,
+            "file_path": "results\\trening_08\\CarMoveToGoal2.onnx",
+            "reward": null,
+            "creation_time": 1773953212.839242,
+            "auxillary_file_paths": [
+                "results\\trening_08\\CarMoveToGoal2\\CarMoveToGoal2-4228759.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}
