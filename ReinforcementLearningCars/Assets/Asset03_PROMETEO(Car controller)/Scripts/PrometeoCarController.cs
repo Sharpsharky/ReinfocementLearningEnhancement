@@ -529,7 +529,11 @@ public class PrometeoCarController : MonoBehaviour
           throttleAxis = 0f;
         }
       }
-      carRigidbody.velocity = carRigidbody.velocity * (1f / (1f + (0.025f * decelerationMultiplier)));
+      float decelerationFactor = 1f / (1f + (0.025f * decelerationMultiplier));
+      Vector3 vel = carRigidbody.velocity;
+      vel.x *= decelerationFactor;
+      vel.z *= decelerationFactor;
+      carRigidbody.velocity = vel;
       // Since we want to decelerate the car, we are going to remove the torque from the wheels of the car.
       frontLeftCollider.motorTorque = 0;
       frontRightCollider.motorTorque = 0;
@@ -537,8 +541,9 @@ public class PrometeoCarController : MonoBehaviour
       rearRightCollider.motorTorque = 0;
       // If the magnitude of the car's velocity is less than 0.25f (very slow velocity), then stop the car completely and
       // also cancel the invoke of this method.
-      if(carRigidbody.velocity.magnitude < 0.25f){
-        carRigidbody.velocity = Vector3.zero;
+      Vector3 horizontalVelocity = new Vector3(carRigidbody.velocity.x, 0f, carRigidbody.velocity.z);
+      if(horizontalVelocity.magnitude < 0.25f){
+        carRigidbody.velocity = new Vector3(0f, carRigidbody.velocity.y, 0f);
         CancelInvoke("DecelerateCar");
       }
     }

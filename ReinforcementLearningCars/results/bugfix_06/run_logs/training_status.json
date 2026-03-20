@@ -1,0 +1,65 @@
+{
+    "CarMoveToGoal2": {
+        "checkpoints": [
+            {
+                "steps": 1999874,
+                "file_path": "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-1999874.onnx",
+                "reward": 4.036020278930664,
+                "creation_time": 1774031430.8314612,
+                "auxillary_file_paths": [
+                    "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-1999874.pt"
+                ]
+            },
+            {
+                "steps": 2499878,
+                "file_path": "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-2499878.onnx",
+                "reward": null,
+                "creation_time": 1774032945.51429,
+                "auxillary_file_paths": [
+                    "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-2499878.pt"
+                ]
+            },
+            {
+                "steps": 2999850,
+                "file_path": "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-2999850.onnx",
+                "reward": 3.4633523672819138,
+                "creation_time": 1774034459.8580303,
+                "auxillary_file_paths": [
+                    "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-2999850.pt"
+                ]
+            },
+            {
+                "steps": 3499990,
+                "file_path": "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-3499990.onnx",
+                "reward": null,
+                "creation_time": 1774035983.4063995,
+                "auxillary_file_paths": [
+                    "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-3499990.pt"
+                ]
+            },
+            {
+                "steps": 3910305,
+                "file_path": "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-3910305.onnx",
+                "reward": null,
+                "creation_time": 1774036844.7114046,
+                "auxillary_file_paths": [
+                    "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-3910305.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3910305,
+            "file_path": "results\\bugfix_06\\CarMoveToGoal2.onnx",
+            "reward": null,
+            "creation_time": 1774036844.7114046,
+            "auxillary_file_paths": [
+                "results\\bugfix_06\\CarMoveToGoal2\\CarMoveToGoal2-3910305.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}

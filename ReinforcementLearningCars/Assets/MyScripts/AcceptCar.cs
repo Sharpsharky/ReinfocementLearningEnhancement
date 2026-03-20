@@ -25,6 +25,9 @@ public class AcceptCar : MonoBehaviour
     private void OnEnable()
     {
         hasTouchedTheParkingSpace = false;
+        checkpoint0 = false;
+        checkpoint1 = false;
+        checkpoint2 = false;
     }
     private void OnTriggerEnter(Collider other)
     {

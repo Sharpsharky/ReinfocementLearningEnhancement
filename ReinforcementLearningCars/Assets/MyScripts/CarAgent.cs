@@ -41,16 +41,13 @@ public class CarAgent : Agent
         if (StepCount >= MaxStep) FinishTheEpisode();
     }
 
-    public override void CollectObservations(VectorSensor sensor) //TO DO: Change the observation to correctly set up car on a parking spot
+    public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform.localPosition); //3 inputs
-        sensor.AddObservation(transform.rotation); //3 inputs
-
-        sensor.AddObservation(targetTransform.localPosition); //3 inputs
-        sensor.AddObservation(targetTransform.rotation); //3 inputs
-
-        //sensor.AddObservation(prometeoCarController.carSpeed); //1 input
-        //sensor.AddObservation(Vector3.Distance(transform.localPosition,targetTransform.localPosition)); //1 input
+        Vector3 directionToTarget = targetTransform.position - transform.position;
+        sensor.AddObservation(directionToTarget);           // 3 inputs
+        sensor.AddObservation(transform.rotation);          // 4 inputs
+        sensor.AddObservation(targetTransform.rotation);    // 4 inputs
+        sensor.AddObservation(prometeoCarController.carSpeed); // 1 input
     }
 
     public void GiveRewardToAgent(float reward)
@@ -66,7 +63,6 @@ public class CarAgent : Agent
         Score.instance.ChangeScore(1, 0);
         drawCarController.StartSimulation();
         EndEpisode();
-
     }
 
     public void Win()
@@ -78,7 +74,9 @@ public class CarAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-            StartComparingDistanceFromParkingSpace();
+        countOfObjBeingTouched = 0;
+        isFinishing = false;
+        StartComparingDistanceFromParkingSpace();
     }
 
     private void GiveRewardAccordingToSpeed()
@@ -90,29 +88,33 @@ public class CarAgent : Agent
     }
 
 
+    private IEnumerator distanceCoroutine;
+
     private void StartComparingDistanceFromParkingSpace()
     {
-        StartCoroutine(CheckDistanceAndGiveReward());
-
+        if (distanceCoroutine != null) StopCoroutine(distanceCoroutine);
+        distanceCoroutine = CheckDistanceAndGiveReward();
+        StartCoroutine(distanceCoroutine);
     }
 
     int countOfObjBeingTouched = 0;
+    bool isFinishing = false;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Curb") return;
+        if (isFinishing) return;
 
         countOfObjBeingTouched++;
         GiveRewardToAgent(-0.5f);
         Debug.LogError(transform.parent.name + " hit: " + collision.gameObject.tag + " (" + collision.gameObject+")");
+        isFinishing = true;
         StartCoroutine(Wait());
     }
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.2f);
-
         FinishTheEpisode();
-
         yield return null;
     }
 
@@ -167,48 +169,45 @@ public class CarAgent : Agent
     private float previousDistanceFromParkingSpace;
     private float currentDistanceFromParkingSpace;
 
+    private const float EpisodeTimeLimit = 30f;
+
     private IEnumerator CheckDistanceAndGiveReward()
     {
         yield return new WaitForSeconds(0.1f);
         previousDistanceFromParkingSpace = Vector3.Distance(transform.position, targetTransform.position);
+        float episodeStartTime = Time.time;
 
-        //Debug.Log("CheckDistanceAndGiveReward");
-        while (true) 
+        while (true)
         {
             yield return new WaitForSeconds(2f);
 
-            currentDistanceFromParkingSpace = Vector3.Distance(transform.position, targetTransform.position);
-            if (currentDistanceFromParkingSpace >= previousDistanceFromParkingSpace)
+            if (Time.time - episodeStartTime >= EpisodeTimeLimit)
             {
-                float distanceChange = currentDistanceFromParkingSpace - previousDistanceFromParkingSpace;
+                GiveRewardToAgent(-0.5f);
+                FinishTheEpisode();
+                yield break;
+            }
 
-                //Debug.Log("Reward: " + (-3 * distanceCoefficient));
-                GiveRewardToAgent(-0.05f * distanceChange);
-            }
-            else
+            currentDistanceFromParkingSpace = Vector3.Distance(transform.position, targetTransform.position);
+            float distanceChange = previousDistanceFromParkingSpace - currentDistanceFromParkingSpace;
+            GiveRewardToAgent(0.2f * distanceChange);
+
+            if (Mathf.Abs(distanceChange) < 2 && currentDistanceFromParkingSpace > 2)
             {
-                float distanceChange = previousDistanceFromParkingSpace - currentDistanceFromParkingSpace;
-                //Debug.Log("Reward: " + (3 * distanceCoefficient));
-                GiveRewardToAgent(0.05f * distanceChange);
+                GiveRewardToAgent(-0.05f);
             }
+
+            if (currentDistanceFromParkingSpace < 5f)
+            {
+                GiveRewardToAgent(0.1f);
+            }
+
             previousDistanceFromParkingSpace = currentDistanceFromParkingSpace;
 
-
-            if(Mathf.Abs(currentDistanceFromParkingSpace-previousDistanceFromParkingSpace) < 2 && currentDistanceFromParkingSpace > 2)
-            {
-                //Debug.Log("Reward: " + (-10));
-
-                GiveRewardToAgent(-0.1f);
-
-            }
-
-            if(countOfObjBeingTouched > 0)
+            if (countOfObjBeingTouched > 0)
             {
                 GiveRewardToAgent(-0.1f);
-
             }
-
-
         }
         yield return null;
     }

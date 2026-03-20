@@ -3348,6 +3348,11 @@ PrefabInstance:
       propertyPath: spawnAgentInCube
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5090411083167362657, guid: 6c94942d3980e1b4990f0208319cc0ae,
+        type: 3}
+      propertyPath: spawnCarsOneByOne
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5090411083167362658, guid: 6c94942d3980e1b4990f0208319cc0ae,
         type: 3}
       propertyPath: m_RootOrder

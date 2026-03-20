@@ -1,0 +1,74 @@
+{
+    "CarMoveToGoal2": {
+        "checkpoints": [
+            {
+                "steps": 99787,
+                "file_path": "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-99787.onnx",
+                "reward": -1.58281202178735,
+                "creation_time": 1774038744.6139886,
+                "auxillary_file_paths": [
+                    "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-99787.pt"
+                ]
+            },
+            {
+                "steps": 199839,
+                "file_path": "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-199839.onnx",
+                "reward": -1.3635717630386353,
+                "creation_time": 1774040133.5075564,
+                "auxillary_file_paths": [
+                    "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-199839.pt"
+                ]
+            },
+            {
+                "steps": 299701,
+                "file_path": "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-299701.onnx",
+                "reward": -0.5820518732070923,
+                "creation_time": 1774041353.7574944,
+                "auxillary_file_paths": [
+                    "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-299701.pt"
+                ]
+            },
+            {
+                "steps": 399905,
+                "file_path": "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-399905.onnx",
+                "reward": -1.0614485045274098,
+                "creation_time": 1774042519.367867,
+                "auxillary_file_paths": [
+                    "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-399905.pt"
+                ]
+            },
+            {
+                "steps": 499889,
+                "file_path": "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-499889.onnx",
+                "reward": -1.6934537887573242,
+                "creation_time": 1774043705.3572538,
+                "auxillary_file_paths": [
+                    "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-499889.pt"
+                ]
+            },
+            {
+                "steps": 523107,
+                "file_path": "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-523107.onnx",
+                "reward": null,
+                "creation_time": 1774043899.0865211,
+                "auxillary_file_paths": [
+                    "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-523107.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 523107,
+            "file_path": "results\\bugfix_07\\CarMoveToGoal2.onnx",
+            "reward": null,
+            "creation_time": 1774043899.0865211,
+            "auxillary_file_paths": [
+                "results\\bugfix_07\\CarMoveToGoal2\\CarMoveToGoal2-523107.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}
