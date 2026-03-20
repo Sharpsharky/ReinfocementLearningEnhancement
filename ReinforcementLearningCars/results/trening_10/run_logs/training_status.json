@@ -1,0 +1,29 @@
+{
+    "CarMoveToGoal2": {
+        "checkpoints": [
+            {
+                "steps": 331765,
+                "file_path": "results\\trening_10\\CarMoveToGoal2\\CarMoveToGoal2-331765.onnx",
+                "reward": null,
+                "creation_time": 1774006044.6150856,
+                "auxillary_file_paths": [
+                    "results\\trening_10\\CarMoveToGoal2\\CarMoveToGoal2-331765.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 331765,
+            "file_path": "results\\trening_10\\CarMoveToGoal2.onnx",
+            "reward": null,
+            "creation_time": 1774006044.6150856,
+            "auxillary_file_paths": [
+                "results\\trening_10\\CarMoveToGoal2\\CarMoveToGoal2-331765.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}

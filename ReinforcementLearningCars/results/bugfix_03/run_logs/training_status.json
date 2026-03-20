@@ -1,0 +1,29 @@
+{
+    "CarMoveToGoal2": {
+        "checkpoints": [
+            {
+                "steps": 211272,
+                "file_path": "results\\bugfix_03\\CarMoveToGoal2\\CarMoveToGoal2-211272.onnx",
+                "reward": null,
+                "creation_time": 1774008068.4740417,
+                "auxillary_file_paths": [
+                    "results\\bugfix_03\\CarMoveToGoal2\\CarMoveToGoal2-211272.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 211272,
+            "file_path": "results\\bugfix_03\\CarMoveToGoal2.onnx",
+            "reward": null,
+            "creation_time": 1774008068.4740417,
+            "auxillary_file_paths": [
+                "results\\bugfix_03\\CarMoveToGoal2\\CarMoveToGoal2-211272.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}
